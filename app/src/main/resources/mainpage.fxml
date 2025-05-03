@@ -1,0 +1,163 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.String?>
+<?import java.net.URL?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ChoiceBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<HBox fx:id="root" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" style="-fx-background-color: F5F0E7;" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookbook.controllers.MainPageController">
+   <children>
+      <VBox prefHeight="650.0" prefWidth="203.0">
+         <children>
+            <AnchorPane prefHeight="666.0" prefWidth="203.0" style="-fx-background-color: #362824;">
+               <children>
+                  <ImageView fitHeight="128.0" fitWidth="130.0" layoutX="39.0" layoutY="14.0" pickOnBounds="true" preserveRatio="true">
+                     <image>
+                        <Image url="@images/icon_logo.png" />
+                     </image>
+                  </ImageView>
+                  <Button fx:id="button_addrecipe" graphicTextGap="8.0" layoutX="6.0" layoutY="189.0" mnemonicParsing="false" prefHeight="58.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Add Recipe" textAlignment="CENTER" textFill="#f5f0e7" AnchorPane.leftAnchor="6.0">
+                     <font>
+                        <Font name="Century Gothic" size="21.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_add.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="button_messages" graphicTextGap="16.0" layoutX="8.0" layoutY="305.0" mnemonicParsing="false" onAction="#showMessages" prefHeight="58.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Messages" textAlignment="CENTER" textFill="#f5f0e7">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_messages.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="button_shoppinglist" graphicTextGap="8.0" layoutX="6.0" layoutY="363.0" mnemonicParsing="false" onAction="#loadShoppingList" prefHeight="58.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Shopping List" textAlignment="CENTER" textFill="#f5f0e7">
+                     <font>
+                        <Font name="Century Gothic" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_shopping%20list.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="button_logout" graphicTextGap="16.0" layoutX="4.0" layoutY="562.0" mnemonicParsing="false" onAction="#handleLogoutButtonAction" prefHeight="54.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Log Out" textAlignment="CENTER" textFill="#f5f0e7">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_logout.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="weeklyDinnerButton" graphicTextGap="8.0" layoutX="4.0" layoutY="421.0" mnemonicParsing="false" onAction="#showWeeklyDinnerList" prefHeight="58.0" prefWidth="202.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text="Weekly dinners" textAlignment="CENTER" textFill="#f5f0e7">
+                     <font>
+                        <Font name="Century Gothic" size="19.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="62.0" fitWidth="31.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_dinner.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <Button fx:id="button_favourites" graphicTextGap="8.0" layoutX="8.0" layoutY="247.0" mnemonicParsing="false" onAction="#handleButtonFavoritesAction" prefHeight="58.0" prefWidth="194.0" style="-fx-background-color: transparent; -fx-cursor: hand;" text=" Favourites" textAlignment="CENTER" textFill="#f5f0e7">
+                     <font>
+                        <Font name="Century Gothic" size="24.0" />
+                     </font>
+                     <graphic>
+                        <ImageView fitHeight="31.0" fitWidth="39.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_heart1.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+               </children>
+            </AnchorPane>
+         </children>
+      </VBox>
+      <Pane fx:id="AllRecipesListView" prefHeight="181.0" prefWidth="748.0">
+         <children>
+            <Pane layoutX="7.0" prefHeight="128.0" prefWidth="742.0">
+               <children>
+                  <ChoiceBox fx:id="selectSearch" layoutX="300.0" layoutY="55.0" prefHeight="25.0" prefWidth="92.0" style="-fx-background-color: #F5F0E7; -fx-border-color: #362824; -fx-cursor: hand;" stylesheets="@styling.css">
+                     <styleClass>
+                        <String fx:value="favourites_pane" />
+                        <String fx:value="text-area-and-lists" />
+                     </styleClass></ChoiceBox>
+                  <Button fx:id="button_search" contentDisplay="GRAPHIC_ONLY" layoutX="602.0" layoutY="53.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" prefHeight="33.0" prefWidth="39.0" style="-fx-background-color: F5F0E7; -fx-cursor: hand;" text="Search">
+                     <graphic>
+                        <ImageView fitHeight="25.0" fitWidth="25.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_search.png" />
+                           </image>
+                        </ImageView>
+                     </graphic>
+                  </Button>
+                  <TextField fx:id="searchField" layoutX="411.0" layoutY="54.0" prefHeight="31.0" prefWidth="178.0" promptText="Search" style="-fx-background-color: F5F0E7; -fx-border-color: #362824; -fx-border-width: 0px 0px 2px 0px;">
+                     <font>
+                        <Font name="Century Gothic" size="14.0" />
+                     </font>
+                  </TextField>
+                  <Button fx:id="Helpcenter" contentDisplay="GRAPHIC_ONLY" layoutX="671.0" layoutY="38.0" mnemonicParsing="false" nodeOrientation="LEFT_TO_RIGHT" onAction="#showHelpcenter" prefHeight="54.0" prefWidth="49.0" style="-fx-background-color: F5F0E7; -fx-cursor: hand;" text="help">
+                     <graphic>
+                        <ImageView fitHeight="45.0" fitWidth="41.0" pickOnBounds="true" preserveRatio="true">
+                           <image>
+                              <Image url="@images/icon_help.png" />
+                           </image>
+                        </ImageView>
+                     </graphic></Button>
+               </children>
+            </Pane>
+            <Label fx:id="welcomeText" layoutX="69.0" layoutY="128.0" text="Welcome!" textFill="#362824">
+               <font>
+                  <Font name="Century Gothic" size="35.0" />
+               </font>
+            </Label>
+            <Line endX="302.1999816894531" endY="1.52587890625E-5" layoutX="158.0" layoutY="186.0" startX="-101.00003814697266" startY="1.52587890625E-5" stroke="#362824" />
+            <Text layoutX="310.0" layoutY="243.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Recipes" textAlignment="CENTER">
+               <font>
+                  <Font name="Century Gothic Bold" size="28.0" />
+               </font>
+            </Text>
+            <VBox fx:id="showAllRecipes" layoutX="57.0" layoutY="250.0" prefHeight="375.0" prefWidth="602.0">
+               <children>
+                  <ListView fx:id="recipeList" prefHeight="332.0" prefWidth="551.0" style="-fx-background-color: #F5F0E7;" styleClass="text-area-and-lists">
+                     <stylesheets>
+                        <URL value="@styling.css" />
+                        <URL value="@listviewStyling.css" />
+                     </stylesheets></ListView>
+               </children>
+            </VBox>
+         </children>
+      </Pane>
+   </children>
+</HBox>

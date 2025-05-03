@@ -1,0 +1,198 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.ColumnConstraints?>
+<?import javafx.scene.layout.GridPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.Pane?>
+<?import javafx.scene.layout.RowConstraints?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookbook.controllers.WeeklyDinnerListController">   
+   <children>
+      <VBox alignment="CENTER" prefHeight="500.0" prefWidth="739.0" spacing="20.0" style="-fx-background-color: #F5F0e7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" maxHeight="200.0" prefHeight="190.0" prefWidth="750.0">
+               <children>
+                  <HBox prefHeight="65.0" prefWidth="2500.0">
+                     <children>
+                        <Button fx:id="goBackButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#goBack" prefWidth="61.0" style="-fx-background-color: #F5F0e7;">
+                           <graphic>
+                              <ImageView fitHeight="40.0" fitWidth="40.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icon_back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                        </Button>
+                     </children>
+                  </HBox>
+                  <VBox alignment="CENTER" fillWidth="false" prefHeight="50.0" prefWidth="153.0" spacing="5.0">
+                     <children>
+                        <Label alignment="CENTER" prefWidth="208.0" text="Weekly Dinners" textFill="#362824">
+                           <font>
+                              <Font name="Century Gothic Bold" size="23.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets />
+                           </VBox.margin>
+                        </Label>
+                        <Line endX="70.0" startX="-100.0" stroke="#56423b" strokeWidth="2.0" />
+                     </children>
+                  </VBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="65.0" prefWidth="2500.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="600.0" prefWidth="750.0" spacing="100.0">
+               <children>
+                  <VBox alignment="CENTER" minWidth="100.0" prefHeight="424.0" prefWidth="153.0" spacing="10.0">
+                     <children>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Weeks:">
+                           <font>
+                              <Font name="System Bold" size="16.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="weekList" prefHeight="318.0" prefWidth="127.0" styleClass="text-area-and-lists">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <Button fx:id="AddWeeks" mnemonicParsing="false" onAction="#addWeeks" prefHeight="29.0" prefWidth="108.0" style="-fx-background-color: #362824;" text="Add Week" textFill="WHITE">
+                           <font>
+                              <Font name="Arial Black" size="16.0" />
+                           </font>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <VBox.margin>
+                              <Insets top="10.0" />
+                           </VBox.margin>
+                        </Button>
+                     </children>
+                  </VBox>
+                  <GridPane alignment="CENTER" prefHeight="333.0" prefWidth="509.0" vgap="5.0">
+                     <columnConstraints>
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="80.0" minWidth="80.0" prefWidth="80.0" />
+                        <ColumnConstraints hgrow="SOMETIMES" maxWidth="462.0" minWidth="10.0" prefWidth="423.0" />
+                     </columnConstraints>
+                     <rowConstraints>
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                        <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+                     </rowConstraints>
+                     <children>
+                        <ListView fx:id="lstMonday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="1">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Monday" GridPane.rowIndex="1">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Tuesday" GridPane.rowIndex="2">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Wednesday" GridPane.rowIndex="3">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Thursday" GridPane.rowIndex="4">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Friday" GridPane.rowIndex="5">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Saturday" GridPane.rowIndex="6">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <Text strokeType="OUTSIDE" strokeWidth="0.0" text="Sunday" GridPane.rowIndex="7">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Text>
+                        <ListView fx:id="lstTuesday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="2">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <ListView fx:id="lstWednesday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="3">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <ListView fx:id="lstThursday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="4">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <ListView fx:id="lstFriday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="5">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <ListView fx:id="lstSaturday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="6">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <ListView fx:id="lstSunday" orientation="HORIZONTAL" prefHeight="302.0" prefWidth="80.0" styleClass="text-area-and-lists" GridPane.columnIndex="1" GridPane.rowIndex="7">
+                           <stylesheets>
+                              <URL value="@styling.css" />
+                              <URL value="@listviewStyling.css" />
+                           </stylesheets></ListView>
+                        <HBox alignment="CENTER" minWidth="100.0" prefHeight="100.0" prefWidth="429.0" spacing="50.0" GridPane.columnIndex="1" GridPane.rowIndex="8">
+                           <padding>
+                              <Insets top="20.0" />
+                           </padding>
+                        </HBox>
+                        <Pane prefHeight="9.0" prefWidth="429.0" GridPane.columnIndex="1">
+                           <children>
+                              <Text fx:id="txtSelected" fill="#362824" layoutX="116.0" layoutY="31.0" strokeType="OUTSIDE" strokeWidth="0.0" text="Selected Week:" textAlignment="CENTER">
+                                 <font>
+                                    <Font name="System Bold" size="16.0" />
+                                 </font>
+                              </Text>
+                           </children>
+                        </Pane>
+                     </children>
+                  </GridPane>
+               </children>
+            </HBox>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>

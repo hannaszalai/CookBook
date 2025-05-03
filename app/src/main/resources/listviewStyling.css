@@ -1,0 +1,42 @@
+.list-view {
+    -fx-background-color: #D0C3B6;
+    -fx-background-radius: 15;
+    -fx-border-radius: 15;
+}
+
+/* Cells and Rows */
+.list-view .list-cell {
+    -fx-border-color:   #816852;
+    -fx-padding: 5px;
+    -fx-background-color:  #EAE4DE;
+    -fx-font-size: 12px;
+}
+.list-view .list-cell:hover {
+    -fx-background-color: #DED3CA;
+    -fx-text-background-color: #594738;
+}
+.list-view .list-cell:selected {
+    -fx-background-color: #DED3CA;
+    -fx-text-fill: black;
+}
+
+/* Scrollbars */
+.list-view .virtual-flow .scroll-bar:vertical,
+.list-view .virtual-flow .scroll-bar:vertical .track,
+.list-view .virtual-flow .scroll-bar:vertical .track-background,
+.list-view .virtual-flow .scroll-bar:horizontal,
+.list-view .virtual-flow .scroll-bar:horizontal .track,
+.list-view .virtual-flow .scroll-bar:horizontal .track-background {
+    -fx-background-color: transparent;
+}
+.list-view .virtual-flow .scroll-bar .increment-button,
+.list-view .virtual-flow .scroll-bar .decrement-button {
+    -fx-opacity: 0;
+    -fx-padding: 2;
+}
+.list-view .virtual-flow .scroll-bar:vertical .thumb {
+    -fx-background-color:  linear-gradient(to bottom left, #594738, #594738);
+}
+.list-view .virtual-flow .scroll-bar:horizontal .thumb {
+    -fx-background-color:  linear-gradient(to bottom left, #594738, #594738);
+}

@@ -1,0 +1,73 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Line?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookbook.controllers.ModifyWeekController">
+    <children>
+        <VBox alignment="CENTER" prefHeight="500.0" prefWidth="739.0" spacing="20.0" style="-fx-background-color: #F5F0E7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+            <children>
+                <HBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="78.0" prefWidth="821.0">
+                    <children>
+                        <Button fx:id="goBackButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#goBack" prefHeight="79.0" prefWidth="114.0" style="-fx-background-color: transparent; -fx-cursor: hand;">
+                            <graphic>
+                                <ImageView fitHeight="54.0" fitWidth="54.0" pickOnBounds="true" preserveRatio="true" style="-fx-cursor: hand;">
+                                    <Image url="@images/icon_back.png" />
+                                </ImageView>
+                            </graphic>
+                     <cursor>
+                        <Cursor fx:constant="HAND" />
+                     </cursor>
+                        </Button>
+                        <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="74.0" prefWidth="729.0">
+                            <children>
+                                <Label alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" style="-fx-font-family: 'Century Gothic'; -fx-font-size: 24; -fx-text-fill: #333;" text="Add to Weekly Dinners" textAlignment="CENTER">
+                           <font>
+                              <Font name="Century Gothic Bold" size="8.0" />
+                           </font>
+                           <VBox.margin>
+                              <Insets bottom="5.0" />
+                           </VBox.margin></Label>
+                                <Line endX="351.2928771972656" endY="-0.8061245679855347" startX="0.0" />
+                            </children>
+                        </VBox>
+                    </children>
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+                </HBox>
+                <VBox alignment="CENTER" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="447.0" prefWidth="898.0" spacing="10">
+                    <ListView fx:id="weekList" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="304.0" prefWidth="818.0" styleClass="brown-border">
+                  <VBox.margin>
+                     <Insets />
+                  </VBox.margin>
+                  <stylesheets>
+                     <URL value="@styling.css" />
+                     <URL value="@listviewStyling.css" />
+                  </stylesheets>
+               </ListView>
+                    <ComboBox fx:id="dayComboBox" maxHeight="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="35.0" prefWidth="158.0" styleClass="brown-border" stylesheets="@styling.css" />
+                    <Button maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" onAction="#handleAddRecipeToWeek" prefHeight="40.0" prefWidth="274.0" style="-fx-background-color: #362428; -fx-cursor: hand;" styleClass="brown-border" stylesheets="@styling.css" text="Add Recipe to Selected Day" textFill="WHITE">
+                  <font>
+                     <Font name="Century Gothic Bold" size="17.0" />
+                  </font></Button>
+                </VBox>
+            </children>
+            <padding>
+                <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+            </padding>
+        </VBox>
+    </children>
+</AnchorPane>

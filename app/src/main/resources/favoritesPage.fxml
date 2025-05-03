@@ -1,0 +1,72 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.net.URL?>
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.Cursor?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ListView?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="650.0" prefWidth="950.0" xmlns="http://javafx.com/javafx/21" xmlns:fx="http://javafx.com/fxml/1" fx:controller="cookbook.controllers.FavoritesPageController">
+   <children>
+      <VBox alignment="CENTER" layoutX="33.0" prefHeight="650.0" prefWidth="950.0" spacing="20.0" style="-fx-background-color: F5F0E7;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <HBox alignment="TOP_CENTER" maxHeight="200.0" prefHeight="200.0" prefWidth="752.0">
+               <children>
+                  <HBox prefHeight="65.0" prefWidth="2500.0">
+                     <children>
+                        <Button fx:id="backButton" contentDisplay="TOP" mnemonicParsing="false" onAction="#handleBackButtonAction" prefHeight="70.0" prefWidth="70.0" style="-fx-background-color: transparent;" styleClass="button3">
+                           <graphic>
+                              <ImageView fitHeight="47.0" fitWidth="53.0" pickOnBounds="true" preserveRatio="true">
+                                 <image>
+                                    <Image url="@images/icon_back.png" />
+                                 </image>
+                              </ImageView>
+                           </graphic>
+                           <cursor>
+                              <Cursor fx:constant="HAND" />
+                           </cursor>
+                           <font>
+                              <Font size="10.0" />
+                           </font>
+                        </Button>
+                        <Label alignment="CENTER" prefHeight="67.0" prefWidth="750.0" text="Favourites">
+                           <font>
+                              <Font name="Century Gothic Bold" size="32.0" />
+                           </font>
+                        </Label>
+                     </children>
+                  </HBox>
+                  <HBox alignment="TOP_RIGHT" prefHeight="70.0" prefWidth="256.0" />
+               </children>
+            </HBox>
+            <HBox alignment="CENTER" prefHeight="483.0" prefWidth="890.0" spacing="100.0" style="-fx-background-color: F5F0E7;">
+               <children>
+                  <ListView fx:id="favoritesList" prefHeight="396.0" prefWidth="518.0" styleClass="text-area-and-lists">
+                     <stylesheets>
+                        <URL value="@styling.css" />
+                        <URL value="@listviewStyling.css" />
+                     </stylesheets></ListView>
+               </children>
+            </HBox>
+            <Button fx:id="remove" mnemonicParsing="false" onAction="#removeRecipe" prefHeight="82.0" prefWidth="208.0" style="-fx-background-color: #362824;" text="Remove" textFill="WHITE">
+               <font>
+                  <Font name="Century Gothic Bold" size="21.0" />
+               </font>
+               <cursor>
+                  <Cursor fx:constant="HAND" />
+               </cursor>
+            </Button>
+         </children>
+         <padding>
+            <Insets bottom="30.0" left="30.0" right="30.0" top="30.0" />
+         </padding>
+      </VBox>
+   </children>
+</AnchorPane>
