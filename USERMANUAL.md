@@ -1,36 +1,21 @@
-# Cookbook Database Schema Explanation
+# 📖 CookBook User Manual
 
-## Users Table
-Stores information about users who have accounts in the system. Each user has a unique identifier (`user_id`), a username, a hashed password, a display name, and an admin flag indicating whether they have administrative privileges.
+This guide will walk you through how to get the CookBook application up and running on your system.
 
-## Recipes Table
-Contains details about various recipes. Each recipe has a unique identifier (`recipe_id`), a name, a short description, a detailed description, the number of people the recipe serves (`person_count`), the ID of the user who created the recipe (`user_id`), and timestamps for creation and last update.
+---
 
-## Ingredients Table
-Stores a list of ingredients used in recipes. Each ingredient has a unique identifier (`ingredient_id`) and a name.
+## ✅ Requirements
 
-## RecipeIngredients Table
-This table establishes a many-to-many relationship between recipes and ingredients, allowing a recipe to have multiple ingredients and an ingredient to be used in multiple recipes. It includes the `recipe_id` and `ingredient_id` as foreign keys along with the quantity and unit of each ingredient required for the recipe.
+- Java 17+
+- MySQL Server
+- Gradle (bundled with the repo)
 
-## Tags Table
-Stores tags that can be associated with recipes. Each tag has a unique identifier (`tag_id`) and a name.
+---
 
-## RecipeTags Table
-Establishes a many-to-many relationship between recipes and tags, allowing multiple tags to be assigned to a recipe and a tag to be associated with multiple recipes.
+## 🗄️ Database Setup
 
-## Comments Table
-Stores comments made by users on recipes. Each comment has a unique identifier (`comment_id`), the ID of the recipe it relates to (`recipe_id`), the ID of the user who made the comment (`user_id`), the comment text, and a timestamp for when the comment was made.
-
-## Weeks Table
-Represents weeks, typically used for meal planning. Each week has a unique identifier (`week_id`), a start date, and an end date.
-
-## WeekRecipes Table
-Associates recipes with specific weeks, specifying which recipe is planned for which day of the week and for what meal type (e.g., breakfast, lunch, dinner).
-
-## ShoppingList Table
-Used for generating shopping lists based on planned meals for a particular week. It includes a unique identifier (`list_id`), the ID of the week it corresponds to (`week_id`), the ID of the ingredient (`ingredient_id`), the quantity of the ingredient needed, and the unit of measurement.
-
-# MySQL code:
+1. Open your MySQL interface (Workbench or terminal).
+2. Copy and run the following SQL code to create the necessary schema:
 ```sql
 CREATE DATABASE IF NOT EXISTS cookbook;
 USE cookbook;
@@ -128,3 +113,49 @@ CREATE TABLE ShoppingList (
     FOREIGN KEY (week_id) REFERENCES Weeks(week_id),
     FOREIGN KEY (ingredient_id) REFERENCES Ingredients(ingredient_id)
 );
+```
+
+3. Navigate to
+```path
+src/main/java/your/package/path/DatabaseConnection.java
+```
+and update the following values:
+```java
+String url = "jdbc:mysql://localhost:3306/cookbook";
+String user = "your_mysql_username";
+String password = "your_mysql_password";
+```
+
+---
+
+# Cookbook Database Schema Explanation
+## Users Table
+Stores information about users who have accounts in the system. Each user has a unique identifier (`user_id`), a username, a hashed password, a display name, and an admin flag indicating whether they have administrative privileges.
+
+## Recipes Table
+Contains details about various recipes. Each recipe has a unique identifier (`recipe_id`), a name, a short description, a detailed description, the number of people the recipe serves (`person_count`), the ID of the user who created the recipe (`user_id`), and timestamps for creation and last update.
+
+## Ingredients Table
+Stores a list of ingredients used in recipes. Each ingredient has a unique identifier (`ingredient_id`) and a name.
+
+## RecipeIngredients Table
+This table establishes a many-to-many relationship between recipes and ingredients, allowing a recipe to have multiple ingredients and an ingredient to be used in multiple recipes. It includes the `recipe_id` and `ingredient_id` as foreign keys along with the quantity and unit of each ingredient required for the recipe.
+
+## Tags Table
+Stores tags that can be associated with recipes. Each tag has a unique identifier (`tag_id`) and a name.
+
+## RecipeTags Table
+Establishes a many-to-many relationship between recipes and tags, allowing multiple tags to be assigned to a recipe and a tag to be associated with multiple recipes.
+
+## Comments Table
+Stores comments made by users on recipes. Each comment has a unique identifier (`comment_id`), the ID of the recipe it relates to (`recipe_id`), the ID of the user who made the comment (`user_id`), the comment text, and a timestamp for when the comment was made.
+
+## Weeks Table
+Represents weeks, typically used for meal planning. Each week has a unique identifier (`week_id`), a start date, and an end date.
+
+## WeekRecipes Table
+Associates recipes with specific weeks, specifying which recipe is planned for which day of the week and for what meal type (e.g., breakfast, lunch, dinner).
+
+## ShoppingList Table
+Used for generating shopping lists based on planned meals for a particular week. It includes a unique identifier (`list_id`), the ID of the week it corresponds to (`week_id`), the ID of the ingredient (`ingredient_id`), the quantity of the ingredient needed, and the unit of measurement.
+
