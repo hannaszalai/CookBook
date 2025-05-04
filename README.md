@@ -30,7 +30,7 @@ A robust recipe management system built in Java with MySQL and JavaFX GUI. Fuele
 
 1. Clone this repo.
 2. Install [MySQL](https://www.mysql.com/), [Java 17+](https://adoptopenjdk.net/), and [Gradle](https://gradle.org/).
-3. Create a database using the schema described below (see User Manual).
+3. Create a database using the schema described below (see [User Manual](./USERMANUAL.md)).
 4. In the `DatabaseConnection.java` file, update **your** MySQL username and password.
 
 ```java
@@ -44,4 +44,16 @@ String password = "your_password";
 ./gradlew run
 ```
 
+---
+
+## 📚 Tech Stack
+
+`java` &nbsp; `javafx` &nbsp; `mysql` &nbsp; `gradle` &nbsp; `mvc` &nbsp; `oop` &nbsp; `gui` &nbsp; `recipe-app`
+
+---
+
+## 📝 License
+
+This project is licensed under the **MIT License** — because good code, like good food, is meant to be shared.  
+See the [LICENSE](./LICENSE) file for full details.
 
